@@ -13,7 +13,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements PersonAdapter.OnItemClickListener{
 
     ArrayList<Person> persons;
-    int cont = 2;
+    int cont = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +40,13 @@ public class MainActivity extends AppCompatActivity implements PersonAdapter.OnI
 
     @Override
     public void OnLikeClick(int position) {
-        cont++;
-        if (cont== 10)
-            cont=2;
+
+
         Person p = persons.get(position);
-        if(cont % 2 == 0)
+        if(p.getSelected() ==false)
         p.setSelected(true);
-        if (cont % 2 == 1)
+        else
+            
             p.setSelected(false);
 
 
